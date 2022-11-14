@@ -5,7 +5,7 @@ public class LDECircular<T extends Comparable<T>> {
     private LDENode<T> ult;
     private int qtd;
 
-    
+
 
     public boolean isEmpty() {
         if (this.qtd == 0) {
@@ -128,8 +128,27 @@ public class LDECircular<T extends Comparable<T>> {
         if(resultadoBusca != null){
             System.out.println(resultadoBusca.getInfo());
         }
+        else{
+            System.out.println("Matrícula não encontrada");
+        }
 
-        System.out.println("Matrícula não encontrada");
+    }
+
+    public void exibirInfoTodos(){
+        LDENode<T> aux = this.prim;
+        if(this.isEmpty()){
+            System.out.println("lista vazia@");
+        }
+        else if(this.qtd == 1){
+            System.out.println(aux.getInfo());
+        }
+        else{
+            while(aux != null){
+                System.out.println(aux.getInfo());
+                aux = aux.getProx();
+            }
+        }
+        
     }
 
     
