@@ -25,6 +25,7 @@ public class App {
             } else if (escolhaTurma == 4) {
                 turmaEscolhida = turma4;
             }
+
             ITurma();
             escolhaOpcao = scan.nextInt(); scan.nextLine();
            
