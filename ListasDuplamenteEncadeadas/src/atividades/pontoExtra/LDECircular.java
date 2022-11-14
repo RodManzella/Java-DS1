@@ -13,7 +13,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void inserir (T valor) {
+    public void inserirOrdenado (T valor) {
         LDENode<T> novo = new LDENode(valor);
         LDENode<T> aux, anterior;
         if (this.isEmpty() == true) { // inserir na lista vazia
@@ -62,7 +62,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public LDENode<T> buscar (T valor) { // busca sequencial melhorada
+    public LDENode<T> busca (T valor) { // busca sequencial melhorada
         LDENode<T> aux;
         if (this.isEmpty() == true) {
             return null;
@@ -90,8 +90,12 @@ public class LDECircular<T extends Comparable<T>> {
         return null;
     }
 
+    
+
+
+
     public void remover (T valor) {
-        LDENode<T> retorno = this.buscar(valor);
+        LDENode<T> retorno = this.busca(valor);
         LDENode<T> anterior, proximo;
         if (retorno == null){
             System.out.println("Valor não encontrado");
@@ -121,7 +125,7 @@ public class LDECircular<T extends Comparable<T>> {
     }
 
     public void exibirInfo(T valor){
-        LDENode<T> resultadoBusca = new LDENode<>(valor);
+        LDENode<T> resultadoBusca = this.busca(valor);
 
         if(resultadoBusca != null){
             System.out.println(resultadoBusca.getInfo());
@@ -130,5 +134,16 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println("Matrícula não encontrada");
     }
 
-    
+    public void alterarMedia(T valor){
+        LDENode<T> resultadoBusca = this.busca(valor);
+
+        if(resultadoBusca != null){
+
+        }
+        else{
+            System.out.println("Matrícula não encontrada");
+        }
+    }
+
+
 }
