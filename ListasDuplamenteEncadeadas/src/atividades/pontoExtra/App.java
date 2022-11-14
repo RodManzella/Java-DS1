@@ -28,7 +28,8 @@ public class App {
             }
             ITurma();
             escolhaOpcao = scan.nextInt(); scan.nextLine();
-
+           
+            
             if (escolhaOpcao == 1) {
                 System.out.println("Digite o nome do aluno: ");
                 String nome = scan.nextLine();
@@ -45,7 +46,7 @@ public class App {
 
                 turmaEscolhida.alterarMediaFinal(matricula);
             } else if (escolhaOpcao == 4) {
-                System.out.println("Digite o número de faltas do aluno: ");
+                System.out.println("Digite a matrícula: ");
                 String matricula = scan.nextLine();
 
                 turmaEscolhida.alterarFaltas(matricula);
