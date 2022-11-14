@@ -13,6 +13,10 @@ public class Cadastro {
         listaAlunos.inserirOrdenado(alunoNovo);
     }
 
+    public void listar(){
+        
+    }
+
     public Aluno consultar(String rg){
         Aluno alunoConsultar = new Aluno(rg);
         Aluno retorno = listaAlunos.busca(alunoConsultar).getInfo();
@@ -34,7 +38,22 @@ public class Cadastro {
         }
     }
 
-    
+    public void alterarFaltas(String rg){
+        Scanner scan = new Scanner(System.in);
+        Aluno consultado = this.consultar(rg);
+
+        if(consultado != null){
+            System.out.println("O número de faltas antigo do aluno é "+consultado.getFaltas());
+            System.out.println(" ");
+            System.out.println("Digite o novo número de faltas");
+            int novaFalta = scan.nextInt(); scan.nextLine();
+            consultado.setFaltas(novaFalta);
+        }else{
+            System.out.println("A matrícula procurada não existe");
+        }
+    }
+
+
 
     public void removerAluno(String rg){
         Aluno alunoRemover = new Aluno(rg);
