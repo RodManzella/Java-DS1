@@ -5,6 +5,8 @@ public class LDECircular<T extends Comparable<T>> {
     private LDENode<T> ult;
     private int qtd;
 
+    
+
     public boolean isEmpty() {
         if (this.qtd == 0) {
             return true;
@@ -90,10 +92,6 @@ public class LDECircular<T extends Comparable<T>> {
         return null;
     }
 
-    
-
-
-
     public void remover (T valor) {
         LDENode<T> retorno = this.busca(valor);
         LDENode<T> anterior, proximo;
@@ -134,16 +132,7 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println("Matrícula não encontrada");
     }
 
-    public void alterarMedia(T valor){
-        LDENode<T> resultadoBusca = this.busca(valor);
-
-        if(resultadoBusca != null){
-
-        }
-        else{
-            System.out.println("Matrícula não encontrada");
-        }
-    }
+    
 
 
 }
