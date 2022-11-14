@@ -14,7 +14,7 @@ public class Cadastro {
     }
 
     public void listar(){
-        
+        listaAlunos.exibirInfoTodos();
     }
 
     public Aluno consultar(String rg){
@@ -52,9 +52,6 @@ public class Cadastro {
             System.out.println("A matrícula procurada não existe");
         }
     }
-
-
-
     public void removerAluno(String rg){
         Aluno alunoRemover = new Aluno(rg);
         listaAlunos.remover(alunoRemover);
