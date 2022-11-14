@@ -62,7 +62,7 @@ public class Aluno implements Comparable<Aluno> {
 		int resultado;
 		//esse compareTo é o da classe string(objeto this.matricula é string)
 		//compara objeto que chamou o método com objeto a ser comparado(matricula)
-		resultado = this.getMatricula().compareTo(matricula);
+		resultado = this.getMatricula().compareTo(aluno.matricula);
 		return resultado;
 	}
 }

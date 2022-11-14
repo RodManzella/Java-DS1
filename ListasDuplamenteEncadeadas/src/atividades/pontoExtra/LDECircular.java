@@ -43,7 +43,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
         else { 
              aux = this.prim.getProx();
-             while (true){
+             while (aux != null){
                  if (valor.compareTo(aux.getInfo()) == 0) {
                      System.out.println("Valor repetido. Inserção não efetuada!");
                      break;

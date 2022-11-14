@@ -14,8 +14,7 @@ public class App {
 
         do {
             exibirOpcoes();
-            escolhaTurma = scan.nextInt();
-            scan.nextLine();
+            escolhaTurma = scan.nextInt(); scan.nextLine();
 
             if (escolhaTurma == 1) {
                 turmaEscolhida = turma1;
