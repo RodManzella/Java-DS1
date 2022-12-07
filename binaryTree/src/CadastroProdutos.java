@@ -30,24 +30,23 @@ public class CadastroProdutos {
 
         System.out.println("Digite o novo valor do produto: ");
         valorNovo = scan.nextDouble(); scan.nextLine();
-        produtos.procurar(produtoProcurado).setPreco(valorNovo);
+        procurarPorProduto(codigoProduto).setPreco(valorNovo);;
 
     }
 
     public void alterarEstoqueProduto(String codigoProduto){
         Scanner scan = new Scanner(System.in);
-        double estoqueNovo;
+        int estoqueNovo;
         Produto produtoProcurado = new Produto(codigoProduto);
 
         System.out.println("Digite o novo estoque do produto: ");
-        estoqueNovo = scan.nextDouble(); scan.nextLine();
-        produtos.procurar(produtoProcurado).setPreco(estoqueNovo);
-
+        estoqueNovo = scan.nextInt(); scan.nextLine();
+        procurarPorProduto(codigoProduto).setEstoque(estoqueNovo);
     }
 
-
-
-
-
-
+    public void exibirInfoProduto(String codigoProduto){
+        Produto info;
+        info = procurarPorProduto(codigoProduto);
+        System.out.println(info);
+    }
 }
