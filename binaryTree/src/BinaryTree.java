@@ -52,7 +52,23 @@ public class BinaryTree<T extends Comparable<T>> {
     private Node<T> removeNode(Node<T> r, T value) {
         if (r != null) {
             if (value.compareTo(r.getInfo()) == 0) {
-                
+                Node<T> pai, filho;
+                if (r.getLeft() == null && r.getRight() == null) { 
+                    r = null;
+                } else if (r.getLeft() == null) { 
+                    r = r.getRight();
+                } else if (r.getRight() == null) { 
+                    r = r.getLeft();
+                } else { 
+                    pai = r;
+                    filho = pai.getLeft();
+                    while (filho.getRight() != null) {
+                        pai = filho;
+                        filho = filho.getRight();
+                    }
+                    pai.setRight(filho.getLeft());
+                    r.setInfo(filho.getInfo());
+                }
             } else if (value.compareTo(r.getInfo()) < 0) {
                 r.setLeft(removeNode(r.getLeft(), value));
             } else {
