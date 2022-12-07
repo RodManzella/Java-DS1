@@ -65,6 +65,7 @@ public class App {
                 cadastroDeProdutos.remover(codigoProduto);
             }
             else{
+                System.out.println("Programa encerrado!");
                 return;
             }
 
