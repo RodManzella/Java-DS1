@@ -26,7 +26,6 @@ public class CadastroProdutos {
     public void alterarValorProduto(String codigoProduto){
         Scanner scan = new Scanner(System.in);
         double valorNovo;
-        Produto produtoProcurado = new Produto(codigoProduto);
 
         System.out.println("Digite o novo valor do produto: ");
         valorNovo = scan.nextDouble(); scan.nextLine();
@@ -37,7 +36,6 @@ public class CadastroProdutos {
     public void alterarEstoqueProduto(String codigoProduto){
         Scanner scan = new Scanner(System.in);
         int estoqueNovo;
-        Produto produtoProcurado = new Produto(codigoProduto);
 
         System.out.println("Digite o novo estoque do produto: ");
         estoqueNovo = scan.nextInt(); scan.nextLine();
