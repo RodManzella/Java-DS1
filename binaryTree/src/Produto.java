@@ -61,7 +61,7 @@ public class Produto implements Comparable<Produto> {
     }
 
     public int compareTo(Produto produto){
-        return this.getCodigo().compareTo(produto.getCodigo());
+        return this.getCodigo().compareToIgnoreCase(produto.getCodigo());
     }
 
     
