@@ -1,5 +1,5 @@
 public class BinaryTree <T extends Comparable<T>> {
-    private Node raiz;
+    private Node<T> raiz;
 
 
     public boolean isEmpty() {
@@ -18,29 +18,17 @@ public class BinaryTree <T extends Comparable<T>> {
         }
     }
 
-
-    public T buscar(T valor) {
-        Node<T> aux;
+    public T procurar (T value) {
         if (this.isEmpty() == true) {
             return null;
-        } else {
-            aux = this.raiz;
-            while (aux != null) {
-                if (valor.compareTo(aux.getInfo()) == 0) {
-                    return aux.getInfo(); // Achou!!!
-                } else if (valor.compareTo(aux.getInfo()) < 0) {
-                    aux = aux.getLeft();
-                } else {
-                    aux = aux.getRight();
-                }
-            }
-            return null; // Não achou!!!            
+        }
+        else {
+            return this.raiz.findNode (value);
         }
     }
+ 
 
-    
-
-    public void emOrdem() {
+    public void exibirOrdenado() {
         if (this.isEmpty() == true) {
             System.out.println("Árvore vazia");
         } else {

@@ -14,6 +14,10 @@ public class Produto implements Comparable<Produto> {
         this.estoque = estoque;
     }
 
+    public Produto(String codigo){
+        this.codigo = codigo;
+    }
+
     public String getCodigo() {
         return codigo;
     }
