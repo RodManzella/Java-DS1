@@ -1,6 +1,5 @@
-public class BinaryTree <T extends Comparable<T>> {
+public class BinaryTree<T extends Comparable<T>> {
     private Node<T> raiz;
-
 
     public boolean isEmpty() {
         if (this.raiz == null) {
@@ -18,15 +17,13 @@ public class BinaryTree <T extends Comparable<T>> {
         }
     }
 
-    public T procurar (T value) {
+    public T procurar(T value) {
         if (this.isEmpty() == true) {
             return null;
-        }
-        else {
-            return this.raiz.findNode (value);
+        } else {
+            return this.raiz.findNode(value);
         }
     }
- 
 
     public void exibirOrdenado() {
         if (this.isEmpty() == true) {
@@ -44,5 +41,25 @@ public class BinaryTree <T extends Comparable<T>> {
         }
     }
 
+    public void remove(T value) {
+        if (this.isEmpty() == true) {
+            System.out.println("Árvore vazia!");
+        } else {
+            this.raiz = this.removeNode(this.raiz, value);
+        }
+    }
+
+    private Node<T> removeNode(Node<T> r, T value) {
+        if (r != null) {
+            if (value.compareTo(r.getInfo()) == 0) {
+                
+            } else if (value.compareTo(r.getInfo()) < 0) {
+                r.setLeft(removeNode(r.getLeft(), value));
+            } else {
+                r.setRight(removeNode(r.getRight(), value));
+            }
+        }
+        return r;
+    }
 
 }
