@@ -49,4 +49,6 @@ public class CadastroProdutos {
         info = procurarPorProduto(codigoProduto);
         System.out.println(info);
     }
+
+    public void remover
 }
