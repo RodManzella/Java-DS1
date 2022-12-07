@@ -50,5 +50,8 @@ public class CadastroProdutos {
         System.out.println(info);
     }
 
-    public void remover
+    public void remover(String codigoProduto){
+        Produto produtoProcurado = new Produto(codigoProduto);
+        produtos.remove(produtoProcurado);
+    }
 }
