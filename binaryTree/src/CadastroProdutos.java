@@ -10,7 +10,13 @@ public class CadastroProdutos {
     }
 
     public void cadastrarUmProduto(Produto cadastrar){
-        produtos.insert(cadastrar);
+        if(produtos.procurar(cadastrar) != null){
+            System.out.println("Produto já existente");
+        }
+        else{
+            produtos.insert(cadastrar);
+        }
+        
     }
 
     public void exibirInfoCrescente(){
