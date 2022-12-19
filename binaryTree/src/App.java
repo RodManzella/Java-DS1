@@ -26,7 +26,7 @@ public class App {
                 System.out.println("Digite a quantidade inicial desse produto");
                 int qtd = scan.nextInt(); scan.nextLine();
 
-                Produto novoProduto = new Produto(cod, descricao, fornecedor, escolha, qtd);
+                Produto novoProduto = new Produto(cod, descricao, fornecedor, preco, qtd);
                 cadastroDeProdutos.cadastrarUmProduto(novoProduto);
             }
             else if(escolha == 2){
@@ -71,6 +71,7 @@ public class App {
 
 
         }while(escolha != 0);
+        
     }
 
     public static void mostrarOpcoes(){
